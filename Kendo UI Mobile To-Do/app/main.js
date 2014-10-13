@@ -6,7 +6,7 @@ require.config({
 
 define(['app'], function(app) {
    
-    window.app = window.app || app;
+    window.APP = window.APP || app;
     document.addEventListener('deviceready', function(){
         app.init();
         navigator.splashscreen.hide();
