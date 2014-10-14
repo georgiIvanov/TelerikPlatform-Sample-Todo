@@ -20,7 +20,7 @@ define([], function () {
     $.subscribe('/newTodo/add', function(e, text){
         todos.add({
             title: text,
-            category: category
+            category: category || "Work"
         });
     });
     

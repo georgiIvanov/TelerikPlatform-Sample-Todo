@@ -20,4 +20,6 @@ define([
             model.set("text", "");
         }
     };
+
+    return new View('newTodo', html, model, events);
 });
