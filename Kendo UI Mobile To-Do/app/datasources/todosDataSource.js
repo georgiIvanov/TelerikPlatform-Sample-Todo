@@ -1,5 +1,6 @@
 define([], function () {
-    return new kendo.data.DataSource({
+    var category;
+    var todos = new kendo.data.DataSource({
         data: [
             {
                 title: "Talk to corporate",
@@ -15,4 +16,17 @@ define([], function () {
                 category: "Personal"
             }]
     });
+    
+    $.subscribe('/newTodo/add', function(e, text){
+        todos.add({
+            title: text,
+            category: category
+        });
+    });
+    
+    $.subscribe("/category/selected", function(e, cat){
+        category = cat;
+    });
+    
+    return todos;
 });
